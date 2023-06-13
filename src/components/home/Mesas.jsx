@@ -15,7 +15,11 @@ const Mesas = () => {
     const idAuth = localStorage.getItem("id")
    const loadMesas = async () => {
     try {
-      const response = await Api.get(`/${idAuth}/mesa`);
+      const response = await Api.get(`/${idAuth}/mesa`,{
+        headers: {
+          'Cache-Control': 'no-cache'
+          }
+      });
       setMesas(response.data);
     } catch (error) {
       console.error('Erro ao carregar as mesas:', error);

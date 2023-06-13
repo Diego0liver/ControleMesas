@@ -40,7 +40,6 @@ const Login = () => {
             <input type="password" placeholder='Senha'  className="form-control" value={password} onChange={(e)=> setPassword (e.target.value)} />
             </div>
             <button type="button" onClick={logins}  className="btn btn-light btn-block mb-3">Logar !</button><br/>
-            <a href="/registro/user">Registra</a>
         </form>
         </div>
     </div>

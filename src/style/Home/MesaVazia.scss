@@ -1,0 +1,23 @@
+.MesaVazia{
+    text-align: center;
+    background-color: #353535;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    .aviso{
+        background-color: #dc3545;
+        width: 500px;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        img{
+            width: 25px;
+        }
+    }
+    .avisoConteiner{
+       
+    }
+}

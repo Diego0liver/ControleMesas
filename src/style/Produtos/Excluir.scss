@@ -1,0 +1,49 @@
+.Exclui{
+    display: flex;
+    text-align: center !important;
+    justify-content: center;
+    img{
+        width: 500px;
+        margin: 5px;
+        border-radius: 10px;
+        filter: grayscale(100%);
+    }
+
+    .cards{
+        background-color: #353535;
+        width: 600px;
+        margin: 10px;
+        border-radius: 10px;
+        margin-top: 40px;
+    }
+
+    h3{
+        margin: 4px;
+        background-color: #353535;
+    }
+    .avisos{
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .enter{
+        background-color: #198754;
+        margin-bottom: 4px;
+        margin-top: 20px;
+        width: 250px;
+        border-left: 5px #0f5534 solid;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .cancelar{
+        background-color: #dc3545;
+        margin-bottom: 24px;
+        width: 250px;
+        border-left: 5px #aa2835 solid;
+        padding: 5px;
+        font-size: 12px;
+    }
+}

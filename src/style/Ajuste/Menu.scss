@@ -1,0 +1,17 @@
+.Menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+       p, h3{
+        color: white;
+       }
+    .card{
+        margin: 50px;
+        background: linear-gradient(138deg, rgba(53,53,53,1) 0%, rgba(29,29,29,1) 100%);
+        padding: 20px;
+        border-top: 3px  #198754 solid;
+       img{
+        width: 50px;
+       }
+    }
+}

@@ -29,5 +29,9 @@
     h2{
         margin-top: 20px;
     }
-  
+    @media only screen and (max-width: 767px) {
+        img {
+          display: none;
+        }
+      }
 }

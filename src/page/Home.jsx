@@ -37,7 +37,7 @@ export const Home = () => {
      <div className='homeTopo'>
           <p className='m-3'>Dia {currentDate} <br/> {currentTime} Hrs</p>
           <div className='btnMenu'>
-            <button onClick={ajuste}><img src={Conf} alt="conf"></img><p>Ajuste</p></button>
+            <button className='ajst' onClick={ajuste}><img src={Conf} alt="conf"></img><p>Ajuste</p></button>
             <button onClick={logout}><img src={Sair} alt="sair"></img><p>Sair</p></button>
           </div>
       </div>

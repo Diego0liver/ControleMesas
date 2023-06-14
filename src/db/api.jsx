@@ -6,6 +6,7 @@ const token = localStorage.getItem("token")
     baseURL: 'https://apicontrolemesa-production.up.railway.app/api/users',
     headers: {
       Authorization: `Bearer ${token}`,
+      'Cache-Control': 'no-cache'
     }
   });
 

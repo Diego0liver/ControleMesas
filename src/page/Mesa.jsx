@@ -21,7 +21,11 @@ const Mesa = () => {
 
   useEffect(() => {
       if ( id ) {
-        API.get(`${baseURL + id}`)
+        API.get(`${baseURL + id}`,{
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        })
               .then(res => {
                 setMesasID(res.data)
                 setIsLoading(false)

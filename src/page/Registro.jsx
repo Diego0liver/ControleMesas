@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import apiLogin from '../db/apiLogin'
 
 
+//Registra novo usuario ao sistema
 const Registro = () => {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')

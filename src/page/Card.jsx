@@ -4,22 +4,23 @@ import Bar from '../assets/img/bar.jpg'
 import '../style/Produtos/Card.scss'
 import API from '../db/api'
 
+//Rota para confirmar o produto adicionado a mesa
 const Card = () => {
+  //Id e o id da mesa, o Id2 e o id do produto que esta no cardapio
     const { id2, id, nome, total, preco } = useParams()
     let history = useNavigate()
     const baseURL = '/mesa/'
     const URL = '/cardapioMesa'
 
-    //funcao que pega o valor do produto adicionado e soma com o total da mesa
+    //funcao que pega o valor do produto adicionado e soma com o total da mesa junto com a porcantagem do garcom
     let totalMesa = parseInt(total)
     let precoMesa = parseInt(preco)
     let somarTudo = totalMesa + precoMesa
     let somarComTaxa = parseFloat(somarTudo) * 0.1.toFixed(2)
     let totalIdMesa = somarTudo + somarComTaxa
-   
-    
     //
-console.log(totalMesa)
+
+
     function novoProduto(){
       //Post da tabela pivo
         API.post(URL, {

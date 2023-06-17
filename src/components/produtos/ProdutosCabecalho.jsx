@@ -1,37 +1,33 @@
 import React, {useState, useContext} from 'react'
 import Api from '../../db/api'
-
 import '../../style/Produtos/cabecalho.scss'
 import {ContextApi} from "../../context/context"
+import swal from 'sweetalert';
 
+//Inputs dos produtos que estao no menu de cardapio
 const ProdutosCabecalho = () => {
-  const {loadMesa} = useContext(ContextApi) 
-  const idAuth = localStorage.getItem("id")
-
+  const {loadCardapio, idAuth} = useContext(ContextApi) 
   const [nome, setNome] = useState('')
   const [preco, setPreco] = useState('')
  
 
-  const URL = '/cardapio'
-
   function novoProduto(){
     if(nome && preco){
-      Api.post(URL, {
+      Api.post('/cardapio', {
         nome: nome,
         preco: preco,
         user_id: idAuth
-    }).then(loadMesa)
+    }).then(loadCardapio)
+    swal("Ok!", "Item adicionado com sucesso!", "success");
     setNome("")
     setPreco("")
-}else{
- alert('algo deu arrado')
-}}
+     }else{
+      swal("Error!", "Preencha os campos!", "warning");
+     }}
 
 
   return (
     <div className='produtos'>
-    
-
       <div className="add">
       <h3>Adicionar produto ao cardapio</h3>
 
@@ -40,7 +36,6 @@ const ProdutosCabecalho = () => {
 
       <input type="number" id="preco"  name="preco" placeholder='Preço do produto'
        value={preco} onChange={(e)=> setPreco (e.target.value)} />
-
 
       <button className='btn btn-success' onClick={novoProduto}>Salvar Produto no cardapio</button>
       </div>

@@ -3,17 +3,17 @@ import React, { useContext, useEffect, useState } from 'react'
 import {useParams} from "react-router-dom";
 
 
+//Modal do caerdapio quando um produto e adionado a mesa
 const ProdutosDaMesa = (props) => {
-    const {loadMesa, produtos} = useContext(ContextApi) 
+    const {loadCardapio, produtos} = useContext(ContextApi) 
     const { id } = useParams()
-
     const [busca, setBusca] = useState('')
 
     useEffect(()=>{
-      loadMesa()
+      loadCardapio()
     },[]);
   
-  
+//Costante que converte os caracteries ao fazer a busca no input
 const filterItem = produtos.filter((produto)=>produto.nome.toLocaleLowerCase().includes
 ( busca.toLocaleLowerCase()))
      
@@ -45,15 +45,10 @@ const filterItem = produtos.filter((produto)=>produto.nome.toLocaleLowerCase().i
             return <tr key={posts.id}>
                <td>{posts.nome}</td>
                <td>R${posts.preco}</td>
-               <td> <a href={ id + '/cardapio/' + posts.id +  '/' + posts.preco + '/' + props.total + '/' + posts.nome + '/cardapio'}>Adicionar</a></td>
+               <td><a href={ id + '/cardapio/' + posts.id +  '/' + posts.preco + '/' + props.total + '/' + posts.nome + '/cardapio'}>Adicionar</a></td>
             </tr>
         }): <h2 style={{ color:'black' }}>Esta sem produtos va ate AJUSTE depois CARDAPIO para adicionar produtos</h2>}
   </tbody>
-</table>
-
-        
-    </div>
-  )
-}
+</table></div>)}
 
 export default ProdutosDaMesa

@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 import '../style/Ajuste/Menu.scss'
 import MenuLateral from '../components/menu/MenuLateral'
 
+//Menu de Ajustes
 const Ajuste = () => {
    let nav = useNavigate()
 
@@ -27,7 +28,6 @@ const Ajuste = () => {
    <MenuLateral />
    <h1>Menu</h1>
     <div className='Menu'>
-
      <div>
         <div className='card'>
              <img src={Cardapio} alt="cardapio" />

@@ -9,22 +9,20 @@ import  {ContextApi}  from '../../context/context';
 
 
 const Mesas = () => {
-  const {  } = useContext(ContextApi)
+  const { idAuth } = useContext(ContextApi)
     const [mesas, setMesas] = useState([]);
     const [busca, setBusca] = useState('')
-    const idAuth = localStorage.getItem("id")
+
+    //Get com as mesas do ID logado
    const loadMesas = async () => {
     try {
-      const response = await Api.get(`/${idAuth}/mesa`,{
-        headers: {
-          'Cache-Control': 'no-cache'
-          }
-      });
+      const response = await Api.get(`/${idAuth}/mesa`);
       setMesas(response.data);
     } catch (error) {
       console.error('Erro ao carregar as mesas:', error);
     }
   };
+   //
 
       useEffect(()=>{
         loadMesas()
@@ -33,8 +31,7 @@ const Mesas = () => {
       const filterMesa = mesas.filter((mesa)=>mesa.numero.includes(busca))
      // 
 
-  return (
-    <>
+  return (<>
             <div  className="input">
               <input type="number"
               value={busca} 
@@ -61,10 +58,8 @@ const Mesas = () => {
         </div>
       )
     }): <MesaVazia />}
-
     </div>
     </>
   )
 }
-
 export default Mesas

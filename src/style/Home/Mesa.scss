@@ -8,23 +8,37 @@
     .mesaId{
         background: linear-gradient(180deg, #198754 0%, rgba(36,36,36,1) 100%);
         margin: 10px;
-        width: 200px;
+        width: 170px;
         height: 120px;
         border: solid 1px #198754;
     }
     .mesaIdOcupada{
         background: linear-gradient(180deg, #dc3545 0%, rgba(36,36,36,1) 100%);
         margin: 10px;
-        width: 200px;
+        width: 170px;
         height: 120px;
         border: solid 1px #dc3545;
     }
     .mesaIdReservada{
         background: linear-gradient(rgb(141, 141, 42) 0%, rgba(36,36,36,1) 100%);
         margin: 10px;
-        width: 200px;
+        width: 170px;
         height: 120px;
         border: solid 1px rgb(141, 141, 42);
     }
 
 }
+@media only screen and (max-width: 767px) {
+    .mesaId{
+        width: 150px;
+        height: 120px;
+    }
+    .mesaIdOcupada{
+        width: 150px;
+        height: 120px;
+    }
+    .mesaIdReservada{
+        width: 150px;
+        height: 120px;
+    }
+  }

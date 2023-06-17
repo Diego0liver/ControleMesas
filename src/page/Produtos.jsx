@@ -4,18 +4,20 @@ import {ContextApi} from "../context/context"
 import '../style/Produtos/produtos.scss'
 import Api from '../db/api'
 import MenuLateral from '../components/menu/MenuLateral'
+import swal from 'sweetalert';
 
+//Rota dos produtos que estao no cardapio
 export const Produtos = () => {
-  const {loadMesa, produtos} = useContext(ContextApi) 
+  const {loadCardapio, produtos} = useContext(ContextApi) 
 
       useEffect(()=>{
-        loadMesa()
+        loadCardapio()
       },[]);
-
 
       const excluiItem = async (id)=> {
         await Api.delete(`/cardapio/${id}`)
-        loadMesa()
+        loadCardapio()
+        swal("Ok!", "Item excluido com sucesso!", "success");
       }
 
   return (<>
@@ -43,7 +45,5 @@ export const Produtos = () => {
         }): <h1>Sem produtos</h1>}
   </tbody>
 </table>
-    </div>
-    
-    </>)
-}
+    </div></>)}
+export default Produtos

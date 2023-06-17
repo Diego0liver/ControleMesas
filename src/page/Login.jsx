@@ -5,19 +5,18 @@ import  {ContextApi}  from '../context/context';
 import Logo from  '../assets/img/logo.png'
 
 
-
-
+//Pagina de login
 const Login = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const {logi} = useContext(ContextApi)
 
+  //constante que faz o login
   const logins=(e)=>{
     e.preventDefault()
    logi(email, password)
    }
-
    //
 
   return (

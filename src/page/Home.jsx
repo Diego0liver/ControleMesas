@@ -9,13 +9,17 @@ import Logo from '../assets/img/logo.png'
 import  {ContextApi}  from '../context/context';
 import { useNavigate } from 'react-router-dom';
 
+//Pagina inicial
 
+//funcao que mostra a hora e a data
 function getCurrentTime() {
   return moment().tz('America/Sao_Paulo').format('HH:mm');
 }
 function getCurrentDate() {
   return moment().tz('America/Sao_Paulo').format('DD/MM');
 }
+//
+
 
 export const Home = () => {
   const { logout } = useContext(ContextApi)
@@ -23,10 +27,7 @@ export const Home = () => {
   const currentTime = getCurrentTime();
   const currentDate = getCurrentDate();
 
-  function ajuste(){
-          nav('/ajuste')
-  }
-
+  function ajuste(){nav('/ajuste')}
 
   return (
     <div className='Home'>

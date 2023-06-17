@@ -3,6 +3,8 @@ import Mesa from '../../assets/img/mesa.png'
 import '../../style/Home/MesaVazia.scss'
 import Aviso from '../../assets/img/aviso.png'
 
+
+//Caso nao tenha nenhuma mesa registrada no sistema
 const MesaVazia = () => {
     const string = ' Va ate ajuste(Direita superior) -> Mesas -> Adicionar nova mesa'
 

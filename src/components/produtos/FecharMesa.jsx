@@ -4,11 +4,11 @@ import API from '../../db/api'
 import {useParams} from "react-router-dom";
 import swal from 'sweetalert';
 
+//Modal que fecha a mesa
 const FecharMesa = (props) => {
     const { id } = useParams()
     const [troco, setTroco] = useState(0);
     const [result, setResult] = useState(0);
-    const token = localStorage.getItem("token")
 
     function voltar(){
       location.reload();
@@ -32,9 +32,11 @@ const FecharMesa = (props) => {
             voltar()}
         })}
 
+      //Props do valoe total da mesa
      const total = () => {
         setResult(troco - props.total);
       };
+      //
     
   return (
     <div className='FecharMesa'>

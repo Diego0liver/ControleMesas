@@ -15,11 +15,8 @@ import Registro from "./page/Registro";
 
 
 function App() {
-  
-
   return (
     <Routes>
-    
       <Route path='/' element={<Privit><Home /></Privit>} />
       <Route path='/produtos' element={<Privit><Produtos /></Privit>} />
       <Route path='/ajuste' element={<Privit><Ajuste /></Privit>} />
@@ -31,7 +28,6 @@ function App() {
       <Route path='/mesa/:id/cardapio/:id2/:preco/:subTotal/excluir' element={<Privit><Excluir /></Privit>} />
       <Route path='/login' element={<Login />} />
       <Route path='/registro/user' element={<Registro />} />
-  
     </Routes>
   )
 }

@@ -1,17 +1,24 @@
 .MenuLateral{
     background: linear-gradient(126deg, rgba(25,135,84,1) 0%, rgba(38,93,68,1) 61%, rgba(48,48,48,1) 100%);
-   width: 150px;
+    width: 150px;
     height: 100%;
     position: fixed;
-
     ul{
         list-style: none;
     }
     li, button{
         margin-top: 50px;
     }
+    li{
+        display: block;
+        height: 20px;
+        transition: background-color 0.3s, width 0.3s, border-radius 0.3s, box-shadow 0.3s, text-align 0.3s;
+    }
     li:hover{
-        border-bottom: 3px  #198754 solid;
-       
+        background-color: #198754;
+        width: 100px;
+        border-radius: 2px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        text-align: center;
     }
 }

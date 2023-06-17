@@ -4,20 +4,24 @@ import {useParams, useNavigate} from "react-router-dom";
 import Bar from '../assets/img/bar.jpg'
 import '../style/Produtos/Excluir.scss'
 
-
+//Exclui um item que esta em uma mesa
 const Excluir = () => {
+   //Id e o id da mesa, o Id2 e o id do produto que esta no cardapio
     const { id2, id, subTotal, preco } = useParams()
     let history = useNavigate()
     const baseURL = '/mesa/'
-
+    
+    //Codigo feito para atualizar o total da mesa, retirando o produto junto com a porcentagem do mesmo com a taxa do garcon
     let precoMesa = parseInt(preco)
     let somarComTaxa = precoMesa * 0.1.toFixed(2)
     let totalIdMesa = parseFloat(somarComTaxa) + precoMesa
     let totalExcluido = subTotal - totalIdMesa
+    //
 
       function voltar(){
         history('/mesa/'+id)
     }
+
     const excluiPost = ()=> {
       API.delete(`/cardapioMesa/${id}/${id2}`)
        //Edita o status da mesa pro total
@@ -39,7 +43,6 @@ const Excluir = () => {
         voltar()
       }
     };
-  
     useEffect(() => {
       document.addEventListener('keydown', handleKeyDown);
       return () => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from '../assets/svg/load.svg'
 
+//Svg que aparece ao carregar pagina
 const Load = () => {
   return (
     <div>

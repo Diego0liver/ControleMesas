@@ -5,14 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import Bar from '../assets/img/bar.jpg'
 import MenuLateral from '../components/menu/MenuLateral'
 import '../style/Ajuste/Reserva.scss'
+import swal from 'sweetalert';
 
+//Rota para confirmar a reserva da mesa pegando o ID da mesma
 const ReservaId = () => {
   let nav = useNavigate()
-    
     const { id, numero } = useParams()
-
     let reserva = 'Reservado'
 
+    //Atualiza o status da mesa para RESERVADO
     function updatePost() {
         const baseURL = '/mesa/'
         API.put(`${baseURL + id}`, {
@@ -20,10 +21,9 @@ const ReservaId = () => {
           })
           .then((response) => {
            console.log(response.data);
+           swal("Ok!", "Mesa Reservada com sucesso!", "success");
              nav('/')
-          });
-      }
-
+          })};
 
   return (
     <>

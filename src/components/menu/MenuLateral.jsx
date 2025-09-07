@@ -11,6 +11,7 @@ const MenuLateral = () => {
             <a href="/produtos"><li>Cardapio</li></a>
             <a href="/editemesa"><li>Mesas</li></a>
             <a href="/reserva"><li>Reservas</li></a>
+            <a href='/perfil'><li>Perfil</li></a>
             <a href="/"><li>Home</li></a>
         </ul>
     </div>

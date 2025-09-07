@@ -12,6 +12,7 @@ import Reserva from "./page/Reserva";
 import EditeMesa from "./page/EditeMesa";
 import ReservaId from "./page/ReservaId";
 import Registro from "./page/Registro";
+import Perfil from "./page/Perfil.jsx";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route path='/mesa/:id/cardapio/:id2/:preco/:subTotal/excluir' element={<Privit><Excluir /></Privit>} />
       <Route path='/login' element={<Login />} />
       <Route path='/registro/user' element={<Registro />} />
+      <Route path='/perfil' element={<Perfil />} />
     </Routes>
   )
 }
